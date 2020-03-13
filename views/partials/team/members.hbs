@@ -1,0 +1,148 @@
+<section>
+    <div style="background: url('assets/img/a3.jpg');">
+        <br><br><br><br><br>
+        <h1 id="speakerName" align="center">MEET OUR TEAM</h1>
+        <br><br>
+        <div class="section_title mb50">
+            <h2 class="header">
+                <font color="red">Core Team</font>
+            </h2>
+        </div>
+        <div class="container">
+            <div class="row justify-content">
+                <div class="col-4">
+                    <div class="speaker_box">
+                        <div class="speaker_img">
+                            <img src="assets/img/team/tobi.jpg" alt="Courage Egbude">
+                            <div class="info_box">
+                                <h5 class="name">Courage Egbude
+                                    <a href="https://www.instagram.com/uglytobi" target="_blank"><i
+                                            class="ion-social-instagram"></i></a>
+                                    <a href="https://www.twitter.com/_tvbi" target="_blank"><i
+                                            class="ion-social-twitter"></i></a>
+                                </h5>
+                                <p class="position">LEAD ORGANIZER</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="speaker_box">
+                        <div class="speaker_social">
+                            <h2 id="speakerName">
+                                <strong>Courage Egbude</strong>
+                            </h2>
+                            <p>
+                                <font size=3 color="white">Courage is a 500 student of Landmark University, studying
+                                    Electrical and Information and Engineering and also a UI/UX Designer and Motion
+                                    graphics enthusiast. He is currently the Ingressive Campus Ambassador Landmark
+                                    University and the TEDx Lead Organizer. Courage started as a graphics designer in
+                                    2015 and transitioned into User Interface and User Experience design (UI/UX Design)
+                                    in 2018, he was a curator at Tech meets LMU in October 2019 and Tech meets LMU 2.0
+                                    in November 2019. He was awarded best brand design by Ingressive Capital in April
+                                    2019. Courage has worked on projects associated with brands such as Figma,
+                                    Ingressive, Naija Apparel, and Eagle’s Eye FX.  He currently teaches UI/UX Design
+                                    and motion design.
+                                </font>
+                            </p>
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+
+    <!--BREAK LINE FOR NEXT SPEAKER-->
+    <div style="background: url('assets/img/a3.jpg');">
+        <div class="container">
+            <div class="row justify-content">
+                <div class="col-4">
+                    <div class="speaker_box">
+                        <div class="speaker_img">
+                            <img src="assets/img/team/ore2.jpg_large" alt="Ore image">
+                            <div class="info_box">
+                                <h5 class="name">Aruwaji Oreoluwa
+                                    <a href="https://www.instagram.com/ogbontarigi" target="_blank"><i
+                                            class="ion-social-instagram"></i></a>
+                                    <a href="https://www.twitter.com/thecraftman_" target="_blank"><i
+                                            class="ion-social-twitter"></i></a>
+                                </h5>
+                                <p class="position">CO-ORGANIZER</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="speaker_box">
+                        <div class="speaker_social">
+                            <h2 id="speakerName">
+                                <strong>Oreoluwa</strong>
+                            </h2>
+                            <p>
+                                <font size=3 color="white">
+                                    Ore is a staunch advocate of devops cultural practices & believer in standing on the
+                                    shoulders of giants. Currently leading dsc lmu & a microsoft student partner (msp).
+                                    In my spare time, I wine, dine and break bread with aws. And i watch basketball
+                                    videos at night while working instead of sleeping
+                                </font>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+    <!--BREAK LINE FOR NEXT SPEAKER-->
+
+    <!--BREAK LINE FOR NEXT SPEAKER-->
+    <div style="background: url('assets/img/a3.jpg');">
+        <div class="section_title mb50">
+            <h2 class="header">
+                <font color="red">Operational Team</font>
+            </h2>
+        </div>
+        {{#each team}}
+        <div class="container">
+            <div class="row justify-content">
+                <div class="col-4">
+                    <div class="speaker_box">
+                        <div class="speaker_img">
+                            <img src="assets/img/team/{{this.image}}" alt="{{this.name}} image">
+                            <div class="info_box">
+                                <h5 class="name">{{this.name}}
+                                    <a href="https://www.instagram.com/{{this.ig}}" target="_blank"><i
+                                            class="ion-social-instagram"></i></a>
+                                    <a href="https://www.twitter.com/{{this.twitter}}" target="_blank"><i
+                                            class="ion-social-twitter"></i></a>
+                                </h5>
+                                <p class="position">{{this.position}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="speaker_box">
+                        <div class="speaker_social">
+                            <h2 id="speakerName">
+                                <strong>{{this.name}}</strong>
+                            </h2>
+                            <p>
+                                <font size=3 color="white">
+                                    {{this.bio}}
+                                </font>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        {{/each}}
+    </div>
+    <!--BREAK LINE FOR NEXT SPEAKER-->
+
+</section>

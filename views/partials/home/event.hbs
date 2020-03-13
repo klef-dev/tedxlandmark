@@ -1,0 +1,44 @@
+<section>
+    <div style="background: url('assets/img/a3.jpg');">
+        <img src="assets/img/bg/Date.png">
+    </div>
+</section>
+
+
+<section>
+    <div style="background: url('assets/img/a3.jpg');">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10">
+                    <h1 class="mb30 text-center">
+                        <font color=white size="120"> Counter until the big event </font>
+                    </h1>
+                    <br><br>
+                    <p id="demo"></p>
+                    <script>
+                        var countDownDate = new Date("April 18, 2020 09:00:00").getTime();
+                        var x = setInterval(function () {
+                            var now = new Date().getTime();
+                            var distance = countDownDate - now;
+                            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                            // Display the result in the element with id="demo"
+                            document.getElementById("demo").innerHTML = "<font color=red size=120><center><b>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s " + "</b></center></font>";
+                            // If the count down is finished, write some text 
+                            if (distance < 0) {
+                                clearInterval(x);
+                                document.getElementById("demo").innerHTML = "<font color=red size=120><center><b>Main event</b></center></font>";
+                            }
+                        }, 1000);
+                    </script>
+                </div>
+            </div>
+        </div><br><br>
+        <center><a href="/tickets"><button type="button" class="btn btn-primary btn-rounded"
+                    style="font-size : 15px; width: 15%; height: 70px;">Buy Tickets</button></a></center>
+        <br><br>
+    </div>
+
+</section>

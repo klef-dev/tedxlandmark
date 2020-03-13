@@ -1,0 +1,106 @@
+<!--header start here -->
+{{> home/header}}
+<!--header end here-->
+
+<!--page title section-->
+<section class="inner_cover parallax-window" data-parallax="scroll" data-image-src="assets/img/bg/002.jpg">
+  <div class="overlay_dark"></div>
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12">
+        <div class="inner_cover_content">
+          <h3>
+            contact us
+          </h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="breadcrumbs">
+      <ul>
+        <li><a href="/">Home</a> |</li>
+        <li><span>Contact</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!--page title section end-->
+
+<!--contact section -->
+<section class="pt100 pb100">
+  <div class="container">
+    <img src="assets/img/TEDxlmu_white.png" />
+    <div class="row justify-content-center mt100">
+      <div class="col-md-6 col-12">
+        <div class="contact_info">
+          <h5>
+            TEDxLandmarkUniversity is here for you
+          </h5>
+          <p>
+            For any queries regarding the events please contact us by
+            filling this form or by sending us an email to
+            tedxlandmarkuniversity@gmail.com.
+          </p>
+
+          <ul class="icon_list pt50">
+            <li>
+              <i class="ion-location"></i>
+              <span>
+                Landmark Univeristy<br />
+                Omu-Aran, Kwara State
+              </span>
+            </li>
+            <li>
+              <i class="ion-email-unread"></i>
+              <span>
+                <a href="mailto:tedxlandmarkuniversity@gmail.com">tedxlandmarkuniversity@gmail.com</a>
+              </span>
+            </li>
+
+            <li>
+              <i class="ion-planet"></i>
+              <span>
+                tedx.lmu.edu.ng
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 col-12">
+        <div class="contact_form">
+          <form method="post" onsubmit="event.preventDefault(); Contact()">
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" placeholder="name" required/>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" id="email" placeholder="email" required/>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="subject" placeholder="subject" />
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" cols="4" rows="4" id="message" placeholder="message" required></textarea>
+            </div>
+            <div class="form-group text-right">
+              <button class="btn btn-rounded btn-primary" id="btn">
+                send a message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-12 mt70">
+        <!--map-->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.7791558078357!2d5.0811943148397365!3d8.123953604742413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104820481540fac1%3A0xb324dd3eec5f181b!2sLandmark%20University!5e0!3m2!1sen!2sca!4v1582734996581!5m2!1sen!2sca"
+          width="1100" height="600" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+        <!--map end-->
+      </div>
+    </div>
+  </div>
+</section>
+<!--contact section end -->
+
+{{> home/ticket}}
+
+{{> home/footer}}

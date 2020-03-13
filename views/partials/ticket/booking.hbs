@@ -1,0 +1,72 @@
+<section class="pt100 pb100" id="ticket">
+    <div class="container">
+        <div class="row justify-content-center mt100">
+            <div class="col-md-6 col-12">
+                <div class="contact_info">
+                    <h5>
+                        TEDxLandmark is here for you
+                    </h5>
+                    <p>
+                        Only Landmark University student/staffs are allowed to register
+                    </p>
+
+                    <ul class="icon_list pt50">
+                        <li>
+                            <span>
+                                Input your registeration number
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                Select the number of tickets you want to buy
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                See a glance of amount to be paid <br> NB: Ticket ranges from ₦1000
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                Submit your form
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                Then a payment procedure will be sent to your mail
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="contact_form">
+                    <form method="POST" onsubmit="event.preventDefault(); Book()">
+                        <div class="form-group">
+                            <label for="reg_no">Registeration Number</label>
+                            <input type="text" class="form-control" id="reg_no" placeholder="Reg. No" maxlength="7" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ticket_no">Number of Tickets</label>
+                            <select name="ticket_no" id="ticket_no" class="form-control" onchange="setAmount(event.target.value)">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Amount to pay</label>
+                            <input type="number" class="form-control" id="amount" value="1000" readonly>
+                        </div>
+                        <div class="form-group text-right">
+                            <button class="btn btn-rounded btn-primary" id="btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
