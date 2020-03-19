@@ -42,20 +42,21 @@ module.exports = class TicketController {
 
     // try {
       // await transporter.sendMail(mailData);
-       request.get("http://tradexplora.com.ng/tdxmailer/tdxsave.php?"+
+       request.get("http://domainname/tdxmailer/tdxsave.php?"+
        "email="+email+ 
        "&id="+1+
        "&fullname="+ name +
        "&token="+ ticket_no +
-       "&from="+"tedxlandmarkuniversity@gmail.com", function(error, response, body){     
+       "&from="+"tedxlandmarkuniversity@gmail.com", function(error, response, body){
         if(error){
           return response.json({
             msg: `Couldn't send mail to ${email}`,
             error
           });
-         }
-        if(response)
+        }
+        if(response){
           console.log("Email Sent to " + email)
+        }
        })
     // } catch (error) {
       // return response.json({
