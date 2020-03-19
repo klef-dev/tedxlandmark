@@ -42,7 +42,7 @@ module.exports = class TicketController {
 
     // try {
       // await transporter.sendMail(mailData);
-       request.get("http://domainname/tdxmailer/tdxsave.php?"+
+       request.get("https://niseb2018.lmu.edu.ng/mailer/tdxsave.php?"+
        "email="+email+ 
        "&id="+1+
        "&fullname="+ name +
