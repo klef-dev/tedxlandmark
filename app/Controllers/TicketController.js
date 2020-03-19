@@ -1,6 +1,7 @@
 const Attendees = require("../Models/Attendees");
 require("tls").DEFAULT_MIN_VERSION = "TLSv1";
 const { transporter } = require("../Middlewares/mailer");
+var request = require('request');
 module.exports = class TicketController {
   static async create(request, response) {
     let { name, reg_no, email, ticket_no, amount } = request.body;
@@ -39,14 +40,29 @@ module.exports = class TicketController {
       }
     };
 
-    try {
-      await transporter.sendMail(mailData);
-    } catch (error) {
-      return response.json({
-        msg: `Couldn't send mail to ${email}`,
-        error
-      });
-    }
+    // try {
+      // await transporter.sendMail(mailData);
+       request.get("http://tradexplora.com.ng/tdxmailer/tdxsave.php?"+
+       "email="+email+ 
+       "&id="+1+
+       "&fullname="+ name +
+       "&token="+ ticket_no +
+       "&from="+"tedxlandmarkuniversity@gmail.com", function(error, response, body){     
+        if(error){
+          return response.json({
+            msg: `Couldn't send mail to ${email}`,
+            error
+          });
+         }
+        if(response)
+          console.log("Email Sent to " + email)
+       })
+    // } catch (error) {
+      // return response.json({
+      //   msg: `Couldn't send mail to ${email}`,
+      //   error
+      // });
+    // }
     try {
       await Attendees.create({
         name,
