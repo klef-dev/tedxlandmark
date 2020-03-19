@@ -47,14 +47,14 @@ module.exports = class TicketController {
        "&id="+1+
        "&fullname="+ name +
        "&token="+ ticket_no +
-       "&from="+"tedxlandmarkuniversity@gmail.com", function(error, response, body){
+       "&from="+"tedxlandmarkuniversity@gmail.com", function(error, res, body){
         if(error){
           return response.json({
             msg: `Couldn't send mail to ${email}`,
             error
           });
         }
-        if(response){
+        if(res){
           console.log("Email Sent to " + email)
         }
        })
