@@ -3,8 +3,8 @@ require("tls").DEFAULT_MIN_VERSION = "TLSv1";
 const { transporter } = require("../Middlewares/mailer");
 var request = require('request');
 module.exports = class TicketController {
-  static async create(request, response) {
-    let { name, reg_no, email, ticket_no, amount } = request.body;
+  static async create(req, response) {
+    let { name, reg_no, email, ticket_no, amount } = req.body;
     if (!reg_no) {
       return response.json({ msg: "Reg_no required" });
     }
