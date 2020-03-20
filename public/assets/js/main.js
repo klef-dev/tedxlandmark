@@ -268,7 +268,7 @@ async function Book() {
               $("#btn").html("Proccessing...");
             });
             const { data } = await axios.get(
-              "http://127.0.0.1/tedxlandmark/mailer/tdxsave.php?" +
+              "https://niseb2018.lmu.edu.ng/mailer/tdxsave.php?" +
                 "email=" +
                 email +
                 "&amount=" +
