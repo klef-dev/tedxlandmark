@@ -256,18 +256,57 @@ async function Book() {
           }
         },
         allowOutsideClick: () => !Swal.isLoading()
-      }).then(result => {
+      }).then(async result => {
         if (result.value.error) {
           Swal.fire({ text: result.value.msg });
         } else {
-          Swal.fire(
-            "Good job!",
-            "You have successfully booked for your ticket, check your mail for further details",
-            "success"
-          );
-          document.getElementById("reg_no").value = "";
-          document.getElementById("ticket_no").value = 1;
-          document.getElementById("amount").value = 1000;
+          try {
+            $(() => {
+              $("#btn").attr("disabled", true);
+              $("#reg_no").attr("disabled", true);
+              $("#ticket_no").attr("disabled", true);
+              $("#btn").html("Proccessing...");
+            });
+            const { data } = await axios.get(
+              "http://127.0.0.1/tedxlandmark/mailer/tdxsave.php?" +
+                "email=" +
+                email +
+                "&amount=" +
+                amount +
+                "&fullname=" +
+                fullname +
+                "&ticket_no=" +
+                ticket_no
+            );
+            $(() => {
+              $("#btn").attr("disabled", false);
+              $("#reg_no").attr("disabled", false);
+              $("#ticket_no").attr("disabled", false);
+              $("#btn").html("Submit");
+            });
+            Swal.fire(
+              "Good job!",
+              "You have successfully booked for your ticket, check your mail for further details",
+              "success"
+            );
+            document.getElementById("reg_no").value = "";
+            document.getElementById("ticket_no").value = 1;
+            document.getElementById("amount").value = 1000;
+            console.log(data);
+          } catch (error) {
+            console.log(error);
+            $(() => {
+              $("#btn").attr("disabled", false);
+              $("#reg_no").attr("disabled", false);
+              $("#ticket_no").attr("disabled", false);
+              $("#btn").html("Submit");
+            });
+            Swal.fire(
+              "Good job!",
+              "You have successfully booked for your ticket, check your mail for further details",
+              "success"
+            );
+          }
         }
       });
     } catch (error) {
